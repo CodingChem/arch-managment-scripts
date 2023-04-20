@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # become su
-su -
+sudo su
 # Mark all packages as dependancies
 pacman -D --asdeps $(pacman -Qqe)
 
@@ -17,3 +17,5 @@ pacman -D --asexplicit nvidia nvidia-utils nvidia-settings
 pacman -D --asexplicit networkmanager
 
 pacman -Qttdq | pacman -Rns -
+# end root
+#exit
