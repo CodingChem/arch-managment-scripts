@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # become su
-sudo su
+#sudo su -
 # Mark all packages as dependancies
-pacman -D --asdeps $(pacman -Qqe)
+sudo pacman -D --asdeps $(pacman -Qqe)
 
-pacman -D --asexplicit base base-devel linux linux-firmware git vim 
+sudo pacman -D --asexplicit base base-devel linux linux-firmware git vim 
 
 # for intel
-pacman -D --asexplicit intel-ucode
+sudo pacman -D --asexplicit intel-ucode
 
 # for nvidia
-pacman -D --asexplicit nvidia nvidia-utils nvidia-settings
+sudo pacman -D --asexplicit nvidia nvidia-utils nvidia-settings
 
 # for wireless
-pacman -D --asexplicit networkmanager
+sudo pacman -D --asexplicit networkmanager
 
-pacman -Qttdq | pacman -Rns -
+sudo pacman -Qttdq | sudo pacman -Rns -
 # end root
 #exit
